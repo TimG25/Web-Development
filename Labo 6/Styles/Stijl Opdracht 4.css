@@ -1,6 +1,6 @@
 body {font-family: Verdana, sans-serif; background-color: silver; color: darkblue;}
 h1 {font-variant: small-caps; background-color: red}
-a:hover {}
+a:hover {border: solid 2px black;}
 .stippeltjesrand{
     border: 1px
     dotted
