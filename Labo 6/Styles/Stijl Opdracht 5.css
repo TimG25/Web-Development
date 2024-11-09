@@ -1,1 +1,6 @@
-a {background-image: }
+a[href^="http"]:link {
+    background-image: url(../Images/link.svg);
+    background-repeat: no-repeat;
+    background-position: top left;
+    padding-left: 1em;
+}
