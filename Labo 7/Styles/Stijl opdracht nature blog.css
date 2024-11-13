@@ -1,0 +1,19 @@
+article {background-color:lightgrey;}
+
+.titel {background-image: url("../Images/header.jpg");
+        background-repeat: no-repeat;
+        color: white;
+        background-size: auto;
+        margin: auto;
+        }
+
+nav {background-color:black;margin: auto;}
+
+nav a{color:lightgreen;}
+
+section{font-family: Verdana, Geneva, Tahoma;}
+
+section h1{font-size:2em;}
+
+
+body{width:95%; margin: auto;}
