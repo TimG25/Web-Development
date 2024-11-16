@@ -1,0 +1,14 @@
+table {border: 1px solid #006699;
+    border-collapse: collapse; text-align: center; width: 30%; }
+thead {background-color: rgb(170,170,200)}
+table td {border: 1px solid #006699;}
+.vrijedag {background-color: rgb(250,120,120);}
+
+td:first-child {background-color: rgb(255,220,220)}
+td:last-child {background-color: rgb(255,220,220)}
+
+td.anderemaand {background-color: lightgray; color: gray;}
+
+td.daghoofding {
+    color: rgb(200,190,240);
+    background-color: rgb(35,37,70);}
