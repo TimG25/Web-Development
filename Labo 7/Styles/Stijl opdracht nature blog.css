@@ -1,18 +1,21 @@
-article {background-color:lightgrey;}
+article {background-color:lightgrey; padding:5px; margin-top: 5px;}
 
 .titel {background-image: url("../Images/header.jpg");
         background-repeat: no-repeat;
         color: white;
-        background-size: auto;
-        margin: auto;}
+        background-size: cover;
+        margin: auto;
+        height: 100px;}
 
-nav {background-color:black;margin: auto;}
+nav {background-color: rgb(68,68,68); margin: auto;}
 
-nav a{color:lightgreen;}
+nav a{color:lightgreen; font-weight: bold;}
 
 section{font-family: Verdana, Geneva, Tahoma;}
 
 section h1{font-size:2em;}
 
+.artikel {text-decoration: underline;}
 
 body{width:95%; margin: auto;}
+
