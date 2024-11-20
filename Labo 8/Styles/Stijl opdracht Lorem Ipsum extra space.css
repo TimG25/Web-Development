@@ -1,0 +1,11 @@
+.div1 {width: 50%;
+height: 100px;
+border: solid 1px;
+box-sizing: border-box;
+float: left;}
+
+.div2 {width: 50%;
+height: 100px;
+border: solid 1px;
+box-sizing: border-box;
+float: left;}
