@@ -36,7 +36,12 @@ width: 35%;}
 article a:hover {color: saddlebrown;}
 
 footer {font-size: 50%;
-text-align: center;}
+text-align: center;
+position: fixed;
+left: 0;
+bottom: 0;
+width: 100%;
+}
 
 .cursief {font-style: italic;}
 
