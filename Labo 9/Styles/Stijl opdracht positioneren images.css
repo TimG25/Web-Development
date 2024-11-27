@@ -1,0 +1,15 @@
+body{background-color: gray;
+font-size: 1.25em;}
+
+article {margin: 10px;
+    overflow: hidden;
+    border: solid 1px;}
+
+article h2 {text-align: left;}
+article p { margin: 10px 0;}
+article p img {margin: 10px;}
+
+article:nth-child(even) p img {float: right;}
+article:nth-child(even) {text-align: left;}
+article:nth-child(odd) p img {float: left;}
+article:nth-child(even) {text-align: left;}
