@@ -6,3 +6,7 @@ h2 {font: bold 25px Verdana sans-serif; color: blue;}
 article {background-color: silver;
     color: black;
     margin: auto;}
+
+aside img {width: 200px;}
+
+p img {width: 600px;}
