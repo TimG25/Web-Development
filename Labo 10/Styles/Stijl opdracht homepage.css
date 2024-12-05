@@ -4,5 +4,5 @@ h2 {font: bold 25px Verdana sans-serif; color: blue;}
 .lijst {list-style: square;}
 
 article {background-color: silver;
-color: black;
-margin: auto;}
+    color: black;
+    margin: auto;}
