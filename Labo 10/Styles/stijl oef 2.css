@@ -1,0 +1,4 @@
+div div div:nth-child(even) {background-color: dimgrey;
+height: 200px;}
+div div div:nth-child(odd) {background-color: darkgray;
+height: 200px;}
