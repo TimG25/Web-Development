@@ -6,34 +6,62 @@ html {
 * {
     padding: 10px;
 }
-header {background-color: #ddaa00;}
 
-footer {background-color: #ddaa00;}
+@media screen and (min-width: 700px) {
+    .main {display: flex;
+        align-content: space-around;
+        align-items: center;}
+
+    section {flex-grow: 1;
+        text-align: center;}
+}
+
+.container {display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;}
+
+header {background-color: #ddaa00;
+text-align: center;
+color: white;}
+
+footer {background-color: #ddaa00;
+text-align: center;
+color: white;}
 
 section a {border: 1px #333;}
 
 nav a {color: #ddaa00;
 margin: 0 5px;
-border: 1px black solid;}
+border: 1px black solid;
+background-color: white;
+flex-grow: 1;
+text-align: center;}
 
-nav {background-color: #ccc;
-padding: 5px 2px;}
+nav {background-color: #ccc;}
 
 main {background-color: grey;}
 
 body { Font-size: 1em;
 margin: 5px;}
 
-section {margin: 5px;}
+section {margin: 5px;
+background-color: white;}
+
+section a {display: flex;
+border: 1px #333 solid;
+text-align: center;
+align-items: stretch;
+justify-content: center;}
 
 h1 {margin: 0px;}
 
-img {padding: 0px;}
+img {padding: 0px;
+width: 100%;}
 
-.container {display: flex;}
+.nav {display: flex;
+align-content: space-around;
+align-items: center;}
 
-nav a {flex-direction: row;
-justify-content: space-around;}
-
-section {flex-direction: column;
-flex-wrap: wrap;}
