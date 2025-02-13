@@ -11,7 +11,7 @@ const substring = () => {
 
     let g1=parseInt(txtLinks.value, 10);
     let g2=parseInt(txtRechts.value, 10);
-    let resultaat = txtInput.substring(g1, g2);
+    let resultaat = txtInput.value.substring(g1, g2);
     
     txtOutput.innerHTML=resultaat;
 }
