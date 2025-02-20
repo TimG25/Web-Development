@@ -1,0 +1,13 @@
+.color-picker-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 150px
+}
+
+#colorPreview {
+    width: 100px;
+    height: 100px;
+    border: 1px solid #000;
+    margin-top: 20px;
+}
