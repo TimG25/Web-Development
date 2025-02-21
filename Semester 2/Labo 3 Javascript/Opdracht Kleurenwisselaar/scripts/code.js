@@ -1,3 +1,7 @@
-const setup = () => {
+const toggleColor = () => {
+    event.target.classList.toggle('blauw');
 }
-window.addEventListener("load", setup);
+const buttons = document.querySelectorAll('.button');
+buttons.forEach(button => {
+    button.addEventListener('click', toggleColor);
+});
