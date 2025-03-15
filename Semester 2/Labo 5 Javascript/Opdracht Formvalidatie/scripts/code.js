@@ -6,8 +6,8 @@ const setup = () => {
 const valideer = () => {
     let isValid = true;
 
-    const voornaam = document.getElementById('voornaam').value.trim();
-    const voornaamError = document.getElementById('voornaamError');
+    let voornaam = document.getElementById('voornaam').value.trim();
+    let voornaamError = document.getElementById('voornaamError');
     if (voornaam.length > 30) {
         isValid = false;
         document.getElementById('voornaam').classList.add('error');
@@ -17,8 +17,8 @@ const valideer = () => {
         voornaamError.textContent = '';
     }
 
-    const familienaam = document.getElementById('familienaam').value.trim();
-    const familienaamError = document.getElementById('familienaamError');
+    let familienaam = document.getElementById('familienaam').value.trim();
+    let familienaamError = document.getElementById('familienaamError');
     if (familienaam === '') {
         isValid = false;
         document.getElementById('familienaam').classList.add('error');
@@ -32,9 +32,9 @@ const valideer = () => {
         familienaamError.textContent = '';
     }
 
-    const geboortedatum = document.getElementById('geboortedatum').value.trim();
-    const geboortedatumError = document.getElementById('geboortedatumError');
-    const geboortedatumRegex = /^\d{4}-\d{2}-\d{2}$/;
+    let geboortedatum = document.getElementById('geboortedatum').value.trim();
+    let geboortedatumError = document.getElementById('geboortedatumError');
+    let geboortedatumRegex = /^\d{4}-\d{2}-\d{2}$/;
     if (geboortedatum === '') {
         isValid = false;
         document.getElementById('geboortedatum').classList.add('error');
@@ -48,9 +48,9 @@ const valideer = () => {
         geboortedatumError.textContent = '';
     }
 
-    const email = document.getElementById('email').value.trim();
-    const emailError = document.getElementById('emailError');
-    const emailRegex = /^[^@]+@[^@]+$/;
+    let email = document.getElementById('email').value.trim();
+    let emailError = document.getElementById('emailError');
+    let emailRegex = /^[^@]+@[^@]+$/;
     if (email === '') {
         isValid = false;
         document.getElementById('email').classList.add('error');
@@ -64,8 +64,8 @@ const valideer = () => {
         emailError.textContent = '';
     }
     
-    const aantalKinderen = document.getElementById('aantalKinderen').value.trim();
-    const aantalKinderenError = document.getElementById('aantalKinderenError');
+    let aantalKinderen = document.getElementById('aantalKinderen').value.trim();
+    let aantalKinderenError = document.getElementById('aantalKinderenError');
     if (aantalKinderen === '' || isNaN(aantalKinderen) || aantalKinderen < 0) {
         isValid = false;
         document.getElementById('aantalKinderen').classList.add('error');
