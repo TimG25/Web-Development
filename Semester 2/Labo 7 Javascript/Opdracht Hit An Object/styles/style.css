@@ -1,9 +1,27 @@
-#playField{
-    height: 800px;
+#playField {
     width: 600px;
+    height: 800px;
+    position: relative;
+    border: 2px solid black;
+    overflow: hidden;
 }
 
-
-#target {
+#targetImage {
     position: absolute;
+    width: 48px;
+    height: 48px;
+    cursor: pointer;
+}
+
+#startButton {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#scoreDisplay {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
 }

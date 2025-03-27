@@ -12,60 +12,55 @@ const setup = () => {
     document.getElementById("btnStart").addEventListener("click", startGame);
 }
 
-const moveImage = (image) => {
-    const playField = document.getElementById("playField");
+const playField = document.getElementById("playField");
+const targetImage = document.getElementById("targetImage");
+const startButton = document.getElementById("btnStart");
+const scoreDisplay = document.createElement("div");
+scoreDisplay.id = "scoreDisplay";
+scoreDisplay.innerText = "Score: 0";
+playField.appendChild(scoreDisplay);
+
+const moveImage = () => {
     const maxX = playField.clientWidth - global.IMAGE_SIZE;
     const maxY = playField.clientHeight - global.IMAGE_SIZE;
     const randomX = Math.floor(Math.random() * maxX);
     const randomY = Math.floor(Math.random() * maxY);
-    image.style.left = `${randomX}px`;
-    image.style.top = `${randomY}px`;
+    targetImage.style.left = `${randomX}px`;
+    targetImage.style.top = `${randomY}px`;
 };
 
-// Toon een willekeurig object (figuur of bom)
-const showRandomObject = () => {
-    const targetImage = document.getElementById("target");
-    const bombImage = document.getElementById("target");
-    const randomChoice = Math.random() < 0.8 ? targetImage : bombImage;
-
-    moveImage(randomChoice);
-    targetImage.style.display = "none";
-    bombImage.style.display = "none";
-    randomChoice.style.display = "block";
+const changeImage = () => {
+    const randomIndex = Math.floor(Math.random() * (global.IMAGE_COUNT + 1));
+    targetImage.src = `${global.IMAGE_PATH_PREFIX}${randomIndex}${global.IMAGE_PATH_SUFFIX}`;
+    targetImage.dataset.type = randomIndex === global.IMAGE_COUNT ? "bomb" : "normal";
 };
 
-// Verberg alle objecten
-const hideObjects = () => {
-    document.getElementById("targetImage").style.display = "none";
-    document.getElementById("bom").style.display = "none";
-};
-
-// Klik op een object
-const handleClick = (event) => {
-    if (event.target.id === "target") {
-        global.score++;
-        document.getElementById("score").innerText = global.score;
-    } else if (event.target.id === "target") {
-        alert("Game Over");
+const handleClick = () => {
+    if (targetImage.dataset.type === "bomb") {
+        alert("Game Over!");
         clearInterval(global.timeoutId);
-        return;
+        targetImage.style.display = "none";
+    } else {
+        global.score++;
+        scoreDisplay.innerText = `Score: ${global.score}`;
+        moveImage();
+        changeImage();
     }
-    hideObjects();
 };
 
-document.getElementById("target").addEventListener("click", handleClick);
-document.getElementById("target").addEventListener("click", handleClick);
+targetImage.addEventListener("click", handleClick);
 
-// Start het spel
 const startGame = () => {
     global.score = 0;
-    document.getElementById("score").innerText = global.score;
+    scoreDisplay.innerText = "Score: 0";
+    targetImage.style.display = "block";
+    moveImage();
+    changeImage();
     global.timeoutId = setInterval(() => {
-        showRandomObject();
-        setTimeout(hideObjects, 1000);
-    }, 1000);
+        moveImage();
+        changeImage();
+    }, global.MOVE_DELAY);
 };
 
+startButton.addEventListener("click", startGame);
 window.addEventListener("load", setup);
-
-
