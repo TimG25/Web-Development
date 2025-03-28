@@ -24,7 +24,7 @@ const setup = () => {
         card.classList.add("card");
         card.dataset.image = image;
         card.dataset.index = index;
-        card.style.backgroundImage = "url('achterkant.png')";
+        card.style.backgroundImage = "url('Images/achterkant.png')";
         card.addEventListener("click", flipCard);
         gameBoard.appendChild(card);
     });
@@ -36,7 +36,7 @@ const flipCard = (event) => {
 
     if (card.classList.contains("flipped") || card.classList.contains("matched")) return;
 
-    card.style.backgroundImage = `url(${card.dataset.image})`;
+    card.style.backgroundImage = `url(Images/${card.dataset.image})`;
     card.classList.add("flipped");
 
     if (!firstCard) {
@@ -53,8 +53,8 @@ const checkMatch = () => {
         firstCard.classList.add("matched");
         secondCard.classList.add("matched");
     } else {
-        firstCard.style.backgroundImage = "url('../Images/achterkant.png')";
-        secondCard.style.backgroundImage = "url('../Images/achterkant.png')";
+        firstCard.style.backgroundImage = "url('Images/achterkant.png')";
+        secondCard.style.backgroundImage = "url('Images/achterkant.png')";
         firstCard.classList.remove("flipped");
         secondCard.classList.remove("flipped");
     }
