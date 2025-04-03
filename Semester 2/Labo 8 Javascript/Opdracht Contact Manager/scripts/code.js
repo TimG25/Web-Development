@@ -23,7 +23,7 @@ const bewaarBewerktePersoon = () => {
     if (geselecteerdeIndex >= 0) {
         // Bestaande persoon bijwerken
         personen[geselecteerdeIndex] = persoon;
-        lstPersonen.options[geselecteerdeIndex] = `${voornaam} ${familienaam}`;
+        lstPersonen.options[geselecteerdeIndex].text = `${voornaam} ${familienaam}`;
     } else {
         // Nieuwe persoon toevoegen
         personen.push(persoon);
