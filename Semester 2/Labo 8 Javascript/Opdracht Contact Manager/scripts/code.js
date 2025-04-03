@@ -27,7 +27,7 @@ const bewaarBewerktePersoon = () => {
     } else {
         // Nieuwe persoon toevoegen
         personen.push(persoon);
-        let nieuweOptie = new Option(`${voornaam} ${familienaam}`, personen.length - 1);
+        let nieuweOptie = new Option(`${voornaam} ${familienaam}`,personen.length - 1);
         lstPersonen.add(nieuweOptie);
     }
 };
