@@ -26,25 +26,28 @@ const restoreSliderValues = () => {
 
 const storeSwatches = () => {
     // bouw een array met kleurinfo objecten
-    let swatches = {};
-    let swatchesJSON;
+    const swatchDivs = document.querySelectorAll("#swatchComponents .swatch");
+    const swatches = [];
 
-    swatches.red = document.getElementById("sldRed").value;
-    swatches.green = document.getElementById("sldGreen").value;
-    swatches.blue = document.getElementById("sldBlue").value;
+    swatchDivs.forEach(swatch => {
+        swatches.push({
+            red: swatch.getAttribute("data-red"),
+            green: swatch.getAttribute("data-green"),
+            blue: swatch.getAttribute("data-blue")
+        });
+    });
 
-    swatchesJSON = JSON.stringify(swatches);
+    const swatchesJSON = JSON.stringify(swatches);
     localStorage.setItem("swatches", swatchesJSON);
 };
 
 const restoreSwatches = () => {
-    let swatches;
-    let swatchesJSON = localStorage.getItem("swatches");
+    const swatchesJSON = localStorage.getItem("swatches");
+    if (!swatchesJSON) return;
 
-    swatches = JSON.parse(swatchesJSON);
-
-    document.getElementById("sldRed").value = swatches.red;
-    document.getElementById("sldGreen").value = swatches.green;
-    document.getElementById("sldBlue").value = swatches.blue;
+    const swatches = JSON.parse(swatchesJSON);
+    swatches.forEach(color => {
+        addSwatchComponent(color.red, color.green, color.blue);
+    });
 
 };
