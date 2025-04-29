@@ -1,3 +1,11 @@
+const commandMap = {
+    "/g": { title: "Google", url: "https://www.google.com/search?q=", class: "google" },
+    "/y": { title: "Youtube", url: "https://www.youtube.com/results?search_query=", class: "youtube" },
+    "/x": { title: "Twitter", url: "https://x.com/hashtag/", class: "twitter" },
+    "/i": { title: "Instagram", url: "https://www.instagram.com/explore/tags/", class: "instagram" }
+};
+
+
 const setup = () => {
     const input = document.getElementById("searchInput");
     const button = document.getElementById("searchBtn");
@@ -5,12 +13,7 @@ const setup = () => {
 
     let history = JSON.parse(localStorage.getItem("history")) || [];
 
-    const commandMap = {
-        "/g": { title: "Google", url: "https://www.google.com/search?q=", class: "google" },
-        "/y": { title: "Youtube", url: "https://www.youtube.com/results?search_query=", class: "youtube" },
-        "/x": { title: "Twitter", url: "https://x.com/hashtag/", class: "twitter" },
-        "/i": { title: "Instagram", url: "https://www.instagram.com/explore/tags/", class: "instagram" }
-    };
+
 
     const createCard = ({ title, text, url }, colorClass) => {
         const col = document.createElement("div");
@@ -21,8 +24,12 @@ const setup = () => {
             <h5 class="card-title">${title}</h5>
             <p class="card-text">${text}</p>
             <a href="${url}" class="btn btn-sm ${getBtnClass(title)}" target="_blank">Go!</a>
+            <input type="button" value="X" class="btnDelete">
           </div>
         </div>`;
+        let btnDelete = document.getElementById("btnDelete")
+        btnDelete.addEventListener("click", deletehistory);
+        col.appendChild(btnDelete);
         historyContainer.prepend(col);
     };
 
@@ -85,6 +92,13 @@ const setup = () => {
         addToHistory(newEntry);
         input.value = "";
     });
+
+    const deletehistory = (event) => {
+        let historyContainer = document.getElementById("historyContainer");
+        let button = event.target;
+        let history = button.parentNode;
+        historyContainer.removeChild(history);
+    }
 
     const getBtnClass = (title) => {
         switch (title) {
