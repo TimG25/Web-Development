@@ -2,10 +2,12 @@ const commandMap = {
     "/g": { title: "Google", url: "https://www.google.com/search?q=", class: "google" },
     "/y": { title: "Youtube", url: "https://www.youtube.com/results?search_query=", class: "youtube" },
     "/x": { title: "Twitter", url: "https://x.com/hashtag/", class: "twitter" },
-    "/i": { title: "Instagram", url: "https://www.instagram.com/explore/tags/", class: "instagram" }
+    "/i": { title: "Instagram", url: "https://www.instagram.com/explore/tags/", class: "instagram" },
+    "/v": { title: "VRT NWS", url: "https://www.vrt.be/vrtnws/nl/zoek/?query=", class: "vrt-nws"},
+    "/h": { title: "HLN", url: "https://www.hln.be/zoeken?query=", class: "hln" }
 };
 
-const platformOrder = ["Youtube", "Instagram", "Google", "Twitter"];
+const platformOrder = ["Youtube", "Instagram", "Google", "Twitter", "VRT NWS", "HLN"];
 let history = [];
 
 
@@ -15,6 +17,8 @@ const getBtnClass = (title) => {
         case "Youtube": return "btn btn-sm btn-youtube";
         case "Twitter": return "btn btn-sm btn-twitter";
         case "Instagram": return "btn btn-sm btn-instagram";
+        case "VRT NWS": return "btn btn-sm btn-vrt-nws";
+        case "HLN": return "btn btn-sm btn-hln";
         default: return "btn btn-sm btn-secondary";
     }
 };

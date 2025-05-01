@@ -1,7 +1,9 @@
-.youtube { background-color: #FF0000; color: white; }
+.youtube { background-color: #FF0033; color: white; }
 .google { background-color: #4285F4; color: white; }
 .twitter { background-color: #1DA1F2; color: white; }
 .instagram { background-color: #E1306C; color: white; }
+.vrt-nws { background-color: #5541f0; color: white; }
+.hln { background-color: #FF0000; color: white; }
 .btn-primary {background-color: green;
     color: white;
     width: 100%;
@@ -41,8 +43,22 @@
     padding: 5px;
     border-radius: 5px;
 }
+.btn-vrt-nws {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+.btn-hln {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
+
 a {text-decoration: none;}
 .btn-google:hover,
+.btn-vrt-nws,
 .btn-youtube:hover,
 .btn-twitter:hover,
 .btn-instagram:hover {
